@@ -1,6 +1,6 @@
-# req-helper
+# Req Helper
 
-The req-helper  is an ajax, fetch and other interface request help library. It provides some functions to reduce the number of HTTP requests. Proxy functions are used to control the sending frequency of requests and cache responses.
+The Req Helper  is an ajax, fetch and other interface request help library. It provides some functions to reduce the number of HTTP requests. Proxy functions are used to control the sending frequency of requests and cache responses.
 
 It is applicable to client-side JavaScript (such as Browser, React Native, Electron) and server-side Node environment.
 
@@ -43,21 +43,21 @@ require('req-helper', ({ polling }) => {
 ## Some precautions
 
 #### About parameter fn
-Most functions of req-helper need to take a function as a parameter. This function needs to send an ajax request and return a promise object to express the status of the request. 
+Most functions of Req Helper need to take a function as a parameter. This function needs to send an ajax request and return a promise object to express the status of the request. 
 
 We can handle ajax through promise at any time, such as [Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) and [Axios](https://axios-http.com/). You can also use `XMLHttpRequest` with [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
 
 #### About promise status of fn returned
-The req-helper needs to get this state accurately to ensure that the program can run normally.
+The Req Helper needs to get this state accurately to ensure that the program can run normally.
 - `pending`: The client has not received a response.
 - `fulfilled`: The client received the correct response.
 - `rejected`: Request error or the client received an incorrect response.
 
-The following code takes the `cache()` of req-helper as an example
+The following code takes the `cache()` of Req Helper as an example
 ```js
 // Baaaaaaad!
-// The req-helper Unable to know the request error
+// The Req Helper Unable to know the request error
 cache(() => {
   return fetch(url).then(() => {
     // Do something
@@ -76,7 +76,7 @@ cache(() => fetch(url)).then(() => {
 ```
 
 #### About time 
-Most functions of req-helper involve time parameters, such as interval time and cache time. All times are in milliseconds. Some parameters allow 0, and the score parameter must be greater than 0
+Most functions of Req Helper involve time parameters, such as interval time and cache time. All times are in milliseconds. Some parameters allow 0, and the score parameter must be greater than 0
 
 Some browsers (such as chrome) have a phenomenon: The value of `setTimeout` parameter 2 is `0`, which is actually 1 ms. Moreover, `setTimeout` is nested in multiple, and the time is more unpredictable.
 ```js
@@ -88,7 +88,7 @@ setTimeout(() => console.log('parameter set 0:' + (Date.now() - now) + 'ms'), 0)
 // parameter set 1:1ms
 // parameter set 0:1ms
 ```
-The processing of timer time by req-helper is as follows:
+The processing of timer time by Req Helper is as follows:
 ```js
 const setDelay = (cb, time) => {
   if (time === 0) {

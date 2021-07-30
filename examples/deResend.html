@@ -20,7 +20,7 @@
   const enable = document.querySelector("#enable");
 
   addLog('const proxyFn = deResend(fn, statusChange, 5000)!')
-  const proxyFn = deResend(() => {
+  const proxyFn = window['reqHelper'].deResend(() => {
     addLog('call fn()');
     return fetchMock().then(() => {
       addLog('The promise returned by fn has been fulfilled, waiting 5000ms.')

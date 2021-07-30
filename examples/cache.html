@@ -22,7 +22,7 @@
   const expire = document.querySelector("#expire");
 
   addLog('const proxyFn = cache(fn, 5000, expirationHandler)!')
-  const proxyFn = window['req-helper'].cache(() => {
+  const proxyFn = window['reqHelper'].cache(() => {
     addLog('call fn(), cache time is 5000ms');
     return fetchMock();
   }, 5000, () => {

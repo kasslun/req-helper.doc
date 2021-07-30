@@ -30,7 +30,7 @@ start.addEventListener('click', () => {
     return;
   }
   start.setAttribute('disabled', 'disabled');
-  controller = polling(() => {
+  controller = window['reqHelper'].polling(() => {
     addLog('call fn...')
     return fetchMock().then(() => {
       addLog('The promise returned by fn() has been fulfilled, and waiting.')

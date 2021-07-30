@@ -23,7 +23,7 @@
   const sort = document.querySelector('#sort')
   const sortValue = document.querySelector('#sort-value')
   let order = 'asc'
-  const proxyFn = latest((setAbortHandler, key, update) => {
+  const proxyFn = window['reqHelper'].latest((setAbortHandler, key, update) => {
     update.waiting = true;
     let abortToken = {};
     setAbortHandler(() => {

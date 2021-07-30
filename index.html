@@ -5,34 +5,43 @@
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>req-helper documentation</title>
+  <title>Req Helper Documentation</title>
   <link rel="stylesheet" href="./assets/highlight/styles/github.min.css">
   <link rel="stylesheet" href="./assets/doc.css">
   <script src="./assets/doc.js" type="module"></script>
 </head>
 <body>
 <div class="nav">
-  <h3>req-helper</h3>
+  <h3>Req Helper</h3>
+  <div class="links">
+    <a href="https://github.com/kasslun/req-helper" target="_blank">
+      <img src="./assets/img/gihub.svg" />
+    </a>
+    <a href="https://www.npmjs.com/package/req-helper" target="_blank">
+      <img src="./assets/img/npm.svg" />
+    </a>
+  </div>
   <ul id="nav">
     <li class="req-helper">
       <a href="#">home</a>
     </li>
     <li class="cache">
-      <a href="#cache">cache()</a>
+      <a href="#cache">cache</a>
     </li>
     <li class="deResend">
-      <a href="#deResend">deResend()</a>
+      <a href="#deResend">deResend</a>
     </li>
     <li class="latest">
-      <a href="#latest">latest()</a>
+      <a href="#latest">latest</a>
     </li>
     <li class="packing">
-      <a href="#packing">packing()</a>
+      <a href="#packing">packing</a>
     </li>
     <li class="polling">
-      <a href="#polling">polling()</a>
+      <a href="#polling">polling</a>
     </li>
   </ul>
+
 </div>
 <div id="content"></div>
 <script type="module">
@@ -41,12 +50,6 @@
     md('#content', './markdowns/' + (location.hash.slice(1) || 'req-helper') + '.md');
   }
   setMd();
-
-  window.addEventListener('hashchange', e => {
-    e.preventDefault()
-    window.scrollTo(0, 0)
-    setMd();
-  })
 
   const nav = document.querySelector('#nav')
   let current = nav.querySelector('.' + (location.hash.slice(1) || 'req-helper'));
@@ -58,6 +61,15 @@
       li.classList.add('current')
       current = li;
     }
+  })
+
+  window.addEventListener('hashchange', e => {
+    e.preventDefault()
+    window.scrollTo(0, 0)
+    current.classList.remove('current');
+    current = nav.querySelector('.' + (location.hash.slice(1) || 'req-helper'));
+    current.classList.add('current')
+    setMd();
   })
 </script>
 </body>
