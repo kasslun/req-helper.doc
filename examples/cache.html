@@ -28,7 +28,10 @@
   }, 5000, () => {
     addLog('cache expired');
   })
-  proxy.addEventListener('click', proxyFn);
+  proxy.addEventListener('click', () => {
+    addLog('call proxyFn()');
+    proxyFn();
+  });
   refresh.addEventListener('click', proxyFn.refresh);
   expire.addEventListener('click', proxyFn.expire);
 </script>
