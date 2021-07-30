@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>deResend</title>
   <link rel="stylesheet" href="./assets/example.css">
+  <script src="https://raw.githack.com/kasslun/req-helper/main/dist/req-helper.umd.min.js"></script>
 </head>
 <body>
 <button id="de">proxyFn()</button>
@@ -13,7 +14,6 @@
 <script type="module">
   import logs from "./helper/logs.js";
   import fetchMock from "./helper/fetchMock.js";
-  import { deResend } from "../../dist/req-helper.esm.js";
   const addLog = logs('#logs');
 
   const de = document.querySelector('#de')

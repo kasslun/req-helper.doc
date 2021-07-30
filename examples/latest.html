@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>cache</title>
   <link rel="stylesheet" href="./assets/example.css">
+    <script src="https://raw.githack.com/kasslun/req-helper/main/dist/req-helper.umd.min.js"></script>
 </head>
 <body>
 <input type="text" id="search" autocomplete="off" style="width: 300px"/>
@@ -16,7 +17,6 @@
 <script type="module">
   import logs from "./helper/logs.js";
   import fetchMock from "./helper/fetchMock.js";
-  import { latest } from "../../dist/req-helper.esm.js";
   const addLog = logs('#logs');
 
   const search = document.querySelector('#search')
