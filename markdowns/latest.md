@@ -75,7 +75,7 @@ proxyFn(null);
 ```
 - `config`: Object, optional, default `{ maxTasks: 4 }`. 
   - `config.cacheTime`: Number, optional, positive integer, default `undefined` is no cache. Cache time(ms) of results corresponding to dictionary key `cacheKey`.
-  - `canfig.maxTasks`: Number, optional, positive integer, default `4`. Maximum number of concurrent request.
+  - `config.maxTasks`: Number, optional, positive integer, default `4`. Maximum number of concurrent request.
 
 Set cache time `config.cacheTime` and maximum concurrency `config.maxTasks`.
 ```js

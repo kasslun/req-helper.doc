@@ -46,8 +46,8 @@ export function polling<T>(fn: () => Promise<T>, gap?: number): {
 }
 ```
 - #### Arguments
-  - `fn`: Function, polled function, no parameters. need to return a promise object.
-  - `gap`: Number, optional, polling gap(ms) after promise fulfilled(or rejected). Expected to be a positive integer, The default value is 10000.
+  - `fn`: Function, polled function, no parameters. need to return a `Promise` object.
+  - `gap`: Number, optional, polling gap(ms) after `Promise` fulfilled(or rejected). Expected to be a positive integer, The default value is 10000.
 - #### Returns
   `polling()` returns an object `controller` to control the call of `fn`.
   - `controller.stop()`: Stop `fn`'s call loop.
