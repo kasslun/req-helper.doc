@@ -8,7 +8,7 @@ It needs a function `fn` that returns `Promise` object as a parameter, it return
 import { deResend } from 'req-helper';
 const proxyFn = deResend((arg) => {
   return fetch(url).then(response => {
-    // do some
+    // do something
   })
 });
 // call the proxy function of fn

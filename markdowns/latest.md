@@ -59,7 +59,7 @@ export function latest<T, U, V, W>(
 - `fn(setAbortHandler, cacheKey [, ...arg])`: Function, Send request and return Promise object. It receives the parameters passed by `proxyFn` starting with parameter 2 (See Returns part).
   - `setAbortHandler(abortHandler)`: Function, parameters 1 of `fn`, We need to set an abort function `abortHandler` to abort the ajax/fetch request so that the `Promise` returned by `fn` changes from pending to rejected.
     (Fetch abort see [AbortController](https://developer.mozilla.org/en-US/docs/Web/API/AbortController))
-  - `cahceKey`: Any type. If the type is String or Number(not NaN) , the fulfilled `Promise` returned by `fn` will be cached through dictionary key `cahceKey`, and the cache time is set through `config.cacheTime`. If you need no cache, 
+  - `cacheKey`: Any type. If the type is String or Number(not NaN) , the fulfilled `Promise` returned by `fn` will be cached through dictionary key `cacheKey`, and the cache time is set through `config.cacheTime`. If you need no cache. 
   
 ```js
 // Cached.
@@ -74,14 +74,14 @@ const proxyFn = latest(fn);
 proxyFn(null);
 ```
 - `config`: Object, optional, default `{ maxTasks: 4 }`. 
-  - `config.cacheTime`: Number, optional, positive integer, default `undefined` is no cache. Cache time(ms) of results corresponding to dictionary key `cachekey`.
+  - `config.cacheTime`: Number, optional, positive integer, default `undefined` is no cache. Cache time(ms) of results corresponding to dictionary key `cacheKey`.
   - `canfig.maxTasks`: Number, optional, positive integer, default `4`. Maximum number of concurrent request.
 
 Set cache time `config.cacheTime` and maximum concurrency `config.maxTasks`.
 ```js
 import { latest } from 'req-helper'
 latest((set) => {}, {
-  // Cache according to the cachekey parameter
+  // Cache according to the cacheKey parameter
   cacheTime: 1000,
   // Set request concurrency
   maxTasks: 4
