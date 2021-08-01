@@ -45,8 +45,7 @@ export function cache<T, U>(
     cacheTime?: number, 
     expirationHandler?: () => void
 ): {
-  (this: U): Promise<T>;
-  refresh: () => Promise<T>;
+  (this: U, refresh: boolean): Promise<T>;
   expire: () => void;
 }
 ```
@@ -57,8 +56,7 @@ export function cache<T, U>(
   - `expirationHandler()`: Called when the cache expires.
 - #### Returns
   `cache(fn)` returns a proxy function of the `fn`.
-  - `peoxyFn()`: Function, proxy function of `fn`. It returns the `Promise` object from `fn`.
-    - `proxyFn.refresh()`: Force call `fn` and re cache.
+  - `peoxyFn(refresh = false)`: Function, proxy function of `fn`. It returns the `Promise` object from `fn`. Parameter `refresh` pass `true`: expire cache and call `fn`.
     - `proxyFn.expire()`: Expire cache.
   
 ## Have a try
