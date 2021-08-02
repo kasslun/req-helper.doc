@@ -8,7 +8,7 @@
 </head>
 <body>
 <button id="proxy">proxyFn()</button>
-<button id="refresh">proxyFn.refresh()</button>
+<button id="refresh">Refresh: proxyFn(true)</button>
 <button id="expire">proxyFn.expire()</button>
 <div id="logs">
 </div>
@@ -32,7 +32,7 @@
     addLog('call proxyFn()');
     proxyFn();
   });
-  refresh.addEventListener('click', proxyFn.refresh);
+  refresh.addEventListener('click', () => proxyFn(true));
   expire.addEventListener('click', proxyFn.expire);
 </script>
 </body>

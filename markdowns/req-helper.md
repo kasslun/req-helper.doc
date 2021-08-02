@@ -75,6 +75,14 @@ cache(() => fetch(url)).then(() => {
 
 ```
 
+#### About optional parameters
+Optional parameters can be passed to `undefined` or `null`.
+```js
+cache(fn)
+// Equals to
+cache(fn, null)
+```
+
 #### About time 
 Most functions of Req Helper involve time parameters, such as interval time and cache time. All times are in milliseconds. Some parameters allow 0, and the score parameter must be greater than 0
 
