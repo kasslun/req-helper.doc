@@ -60,7 +60,7 @@ ul li {
   height: 100%;
   background: #f2f2f2;
   box-shadow: inset 0 0 3px rgba(0,0,0,.1);
-  width: 140px;
+  width: 200px;
 }
 .links {
   display: flex;
@@ -81,7 +81,7 @@ ul li {
   list-style: none;
 }
 .nav li {
-  padding: 0 1em;
+  padding: 0 2em;
   margin: 0;
 }
 
